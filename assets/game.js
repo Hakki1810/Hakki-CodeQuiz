@@ -3,6 +3,7 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
+var c = 60;
 
 let currentQuestion = {};
 let accceptingAnswers = true;
@@ -46,6 +47,16 @@ let questions = [
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 4;
 
+function timer001() {
+  c = c - 1;
+  if (c < 60) {
+    time001.innerHTML = c;
+  }
+  if (c < 1) {
+    window.clearInterval(update);
+  }
+}
+update = setInterval("timer001()", 1000);
 startGame = () => {
   questionCounter = 0;
   score = 0;
