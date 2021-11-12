@@ -13,17 +13,19 @@ let availableQuestions = [];
 let questions = [
   {
     question: "What is 2 + 2",
-    choice1: "2",
+    choice1: "4",
     choice2: "8",
     choice3: "16",
     choice4: "21",
+    answer: 1,
   },
   {
     question: "What is 16 + 7",
     choice1: "2",
     choice2: "8",
     choice3: "16",
-    choice4: "21",
+    choice4: "23",
+    answer: 4,
   },
   {
     question: "What is 21 + 52",
@@ -48,28 +50,28 @@ startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  getNewQuestions();
+  getNewQuestion();
 };
 
-getNewQuestions = () => {
+getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
 
-    return window.location.assign("/end.html");
+    return window.location.assign("end.html");
   }
 
   questionCounter++;
   progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
   progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
-  const questionsIndex = Math.floor(Math.random());
+  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
 
-  currentQuestion = availableQuestions(questionsIndex);
+  currentQuestion = availableQuestions[questionsIndex];
 
-  questions.innerText = currentQuestion.question;
+  question.innerText = currentQuestion.question;
 
   choices.forEach((choice) => {
-    const number = choice / dataset["number"];
+    const number = choice.dataset["number"];
     choice.innerText = currentQuestion["choice" + number];
   });
 
@@ -79,10 +81,9 @@ getNewQuestions = () => {
 };
 
 choices.forEach((choice) => {
-  choice.addEventListner("click", (e) => {
+  choice.addEventListener("click", (e) => {
     if (!accceptingAnswers) return;
     accceptingAnswers = false;
-
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
 
@@ -92,18 +93,17 @@ choices.forEach((choice) => {
     if (classToApply === "correct") {
       incrementScore(SCORE_POINTS);
     }
-
-    selectedChoice.parentElement.classlist.add(classToApply);
+    selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classtoApply);
+      selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
     }, 1000);
   });
 });
 
 incrementScore = (num) => {
-  score += nums;
+  score += num;
   scoreText.innerText = score;
 };
 
