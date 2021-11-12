@@ -13,27 +13,29 @@ let availableQuestions = [];
 
 let questions = [
   {
-    question: "What is 2 + 2",
-    choice1: "4",
-    choice2: "8",
-    choice3: "16",
-    choice4: "21",
-    answer: 1,
+    question: "What does HTML stand for?",
+    choice1: "Home Tool Markup Language",
+    choice2: "Hyper Text Markup Language",
+    choice3: "Hyperlinks and Text Markup Language",
+    choice4: "Hyper Text Manipulation Language",
+    answer: 2,
   },
   {
-    question: "What is 16 + 7",
-    choice1: "2",
-    choice2: "8",
-    choice3: "16",
-    choice4: "23",
-    answer: 4,
+    question:
+      "_______ is the process of finding errors and fixing them within a program.",
+    choice1: "Compiling",
+    choice2: "Executing",
+    choice3: "Debugging",
+    choice4: "Scanning",
+    answer: 3,
   },
   {
-    question: "What is 21 + 52",
-    choice1: "2",
-    choice2: "8",
-    choice3: "16",
-    choice4: "21",
+    question: "Commonly used data types DO NOT include:",
+    choice1: "Strings",
+    choice2: "Booleans",
+    choice3: "Alerts",
+    choice4: "Numbers",
+    answer: 3,
   },
   {
     question: "What is 32 + 22",
@@ -41,6 +43,7 @@ let questions = [
     choice2: "8",
     choice3: "16",
     choice4: "21",
+    answer: 4,
   },
 ];
 
