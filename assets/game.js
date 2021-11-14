@@ -3,7 +3,7 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
-var c = 40;
+var count = 40;
 
 let currentQuestion = {};
 let accceptingAnswers = true;
@@ -51,11 +51,11 @@ const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 4;
 
 function timer001() {
-  c = c - 1;
-  if (c < 40) {
-    time001.innerHTML = c;
+  count = count - 1;
+  if (count < 40) {
+    time001.innerHTML = count;
   }
-  if (c < 1) {
+  if (count < 1) {
     window.clearInterval(update);
     return window.location.assign("end.html");
   }

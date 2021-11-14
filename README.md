@@ -12,6 +12,13 @@ This is a Code Quiz designed by using HTML, CSS and JavaScript.
 
 ## Screenshots
 
+![Getting Started](./assets/images/ss1.png)
+![Getting Started](./assets/images/ss2.png)
+![Getting Started](./assets/images/ss3.png)
+![Getting Started](./assets/images/ss4.png)
+![Getting Started](./assets/images/ss5.png)
+![Getting Started](./assets/images/ss6.png)
+
 ## Link to the deployed application
 
 You can view the deployed application [here](https://hakki1810.github.io/Hakki-CodeQuiz/).
