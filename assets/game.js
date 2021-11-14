@@ -3,7 +3,7 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
-var count = 40;
+let count = 60;
 
 let currentQuestion = {};
 let accceptingAnswers = true;
@@ -52,15 +52,18 @@ const MAX_QUESTIONS = 4;
 
 function timer001() {
   count = count - 1;
-  if (count < 40) {
+  if (count < 60) {
     time001.innerHTML = count;
   }
   if (count < 1) {
     window.clearInterval(update);
+    localStorage.setItem("mostRecentScore", score);
+
     return window.location.assign("end.html");
   }
 }
 update = setInterval("timer001()", 1000);
+
 startGame = () => {
   questionCounter = 0;
   score = 0;
@@ -107,6 +110,8 @@ choices.forEach((choice) => {
 
     if (classToApply === "correct") {
       incrementScore(SCORE_POINTS);
+    } else if (classToApply === "incorrect") {
+      count -= 5;
     }
     selectedChoice.parentElement.classList.add(classToApply);
 
