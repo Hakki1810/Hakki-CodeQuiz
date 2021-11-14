@@ -6,9 +6,11 @@ This quiz is MCQ type of quiz. The user starts the quiz and there is a timer whe
 
 ## What have we done
 
-1- Creat
+1- HTML and CSS and Javascript documents create a quiz with multiple choice questions with Javascript trivia
+2- This project emphasizes the use of using Javascript to make dynamic changes to an HMTL document
+3- This project utilizes the use of appending HTML pages
 
-This is a Code Quiz designed by using HTML, CSS and JavaScript.
+This Code Quiz was designed using HTML, CSS and JavaScript.
 
 ## Screenshots
 
