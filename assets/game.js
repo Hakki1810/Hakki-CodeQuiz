@@ -3,7 +3,7 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
-var c = 60;
+var c = 40;
 
 let currentQuestion = {};
 let accceptingAnswers = true;
@@ -38,12 +38,12 @@ let questions = [
     answer: 3,
   },
   {
-    question: "What is 32 + 22",
-    choice1: "2",
-    choice2: "8",
-    choice3: "16",
-    choice4: "21",
-    answer: 4,
+    question: "A loop that never ends is referred to as a(n)_________.",
+    choice1: "While loop",
+    choice2: "Infinite loop",
+    choice3: "Recursive loop",
+    choice4: ") for loop",
+    answer: 2,
   },
 ];
 
@@ -52,11 +52,12 @@ const MAX_QUESTIONS = 4;
 
 function timer001() {
   c = c - 1;
-  if (c < 60) {
+  if (c < 40) {
     time001.innerHTML = c;
   }
   if (c < 1) {
     window.clearInterval(update);
+    return window.location.assign("end.html");
   }
 }
 update = setInterval("timer001()", 1000);

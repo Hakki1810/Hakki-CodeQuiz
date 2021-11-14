@@ -14,8 +14,8 @@ This is a Code Quiz designed by using HTML, CSS and JavaScript.
 
 ## Link to the deployed application
 
-You can view the deployed application [here](paste_link_here).
+You can view the deployed application [here](https://hakki1810.github.io/Hakki-CodeQuiz/).
 
 ## Link to the Github repository
 
-You can access the Github repository [here](Paste_link_here).
+You can access the Github repository [here](https://github.com/Hakki1810/Hakki-CodeQuiz).
